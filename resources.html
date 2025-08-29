@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW Learning Resources - Head Copy</title>
+    <meta name="description" content="Comprehensive Morse Code learning resources, guides, and references for ham radio operators.">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-blue: #007AFF;
+            --dark-blue: #005DB8;
+            --light-blue: #E3F2FD;
+            --navy: #1A365D;
+            --text-dark: #2D3748;
+            --text-light: #718096;
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--white);
+        }
+        
+        .logo::before {
+            content: "📻";
+            font-size: 1.8rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 40px 0;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            background: var(--gray-50);
+            border-radius: 16px;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .resource-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .resource-card h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .resource-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--primary-blue);
+        }
+        
+        .resource-card p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        .resource-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .resource-card li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .resource-card li::before {
+            content: "•";
+            color: var(--primary-blue);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .morse-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.5rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: var(--gray-50);
+            border-radius: 8px;
+        }
+        
+        .morse-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.25rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .abbreviation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .abbreviation-item {
+            background: var(--light-blue);
+            padding: 0.75rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-blue);
+        }
+        
+        .abbreviation-item strong {
+            color: var(--navy);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 40px 0 20px;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .morse-table {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Head Copy</a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="clubs.html">Radio Clubs</a></li>
+                <li><a href="about_me.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>📚 CW Learning Resources</h1>
+                <p>Comprehensive guides and references to help you master Morse Code and CW operation</p>
+            </div>
+
+            <div class="resources-grid">
+                <!-- Morse Code Basics -->
+                <div class="resource-card">
+                    <h2>📖 Morse Code Fundamentals</h2>
+                    
+                    <h3>The International Morse Code</h3>
+                    <p>Master the building blocks of CW communication with the complete International Morse Code alphabet, numbers, and punctuation.</p>
+                    
+                    <div class="morse-table">
+                        <div class="morse-item"><span>A</span><span>•—</span></div>
+                        <div class="morse-item"><span>B</span><span>—•••</span></div>
+                        <div class="morse-item"><span>C</span><span>—•—•</span></div>
+                        <div class="morse-item"><span>D</span><span>—••</span></div>
+                        <div class="morse-item"><span>E</span><span>•</span></div>
+                        <div class="morse-item"><span>F</span><span>••—•</span></div>
+                        <div class="morse-item"><span>G</span><span>——•</span></div>
+                        <div class="morse-item"><span>H</span><span>••••</span></div>
+                        <div class="morse-item"><span>I</span><span>••</span></div>
+                        <div class="morse-item"><span>J</span><span>•———</span></div>
+                        <div class="morse-item"><span>K</span><span>—•—</span></div>
+                        <div class="morse-item"><span>L</span><span>•—••</span></div>
+                        <div class="morse-item"><span>M</span><span>——</span></div>
+                        <div class="morse-item"><span>N</span><span>—•</span></div>
+                        <div class="morse-item"><span>O</span><span>———</span></div>
+                        <div class="morse-item"><span>P</span><span>•——•</span></div>
+                        <div class="morse-item"><span>Q</span><span>——•—</span></div>
+                        <div class="morse-item"><span>R</span><span>•—•</span></div>
+                        <div class="morse-item"><span>S</span><span>•••</span></div>
+                        <div class="morse-item"><span>T</span><span>—</span></div>
+                        <div class="morse-item"><span>U</span><span>••—</span></div>
+                        <div class="morse-item"><span>V</span><span>•••—</span></div>
+                        <div class="morse-item"><span>W</span><span>•——</span></div>
+                        <div class="morse-item"><span>X</span><span>—••—</span></div>
+                        <div class="morse-item"><span>Y</span><span>—•——</span></div>
+                        <div class="morse-item"><span>Z</span><span>——••</span></div>
+                    </div>
+                    
+                    <h3>Numbers</h3>
+                    <div class="morse-table">
+                        <div class="morse-item"><span>0</span><span>—————</span></div>
+                        <div class="morse-item"><span>1</span><span>•————</span></div>
+                        <div class="morse-item"><span>2</span><span>••———</span></div>
+                        <div class="morse-item"><span>3</span><span>•••——</span></div>
+                        <div class="morse-item"><span>4</span><span>••••—</span></div>
+                        <div class="morse-item"><span>5</span><span>•••••</span></div>
+                        <div class="morse-item"><span>6</span><span>—••••</span></div>
+                        <div class="morse-item"><span>7</span><span>——•••</span></div>
+                        <div class="morse-item"><span>8</span><span>———••</span></div>
+                        <div class="morse-item"><span>9</span><span>————•</span></div>
+                    </div>
+                </div>
+
+                <!-- CW Procedures -->
+                <div class="resource-card">
+                    <h2>🎯 CW Operating Procedures</h2>
+                    
+                    <h3>Standard Q-Signals</h3>
+                    <p>Essential Q-codes used in amateur radio CW operations:</p>
+                    <ul>
+                        <li><strong>QRL?</strong> - Is this frequency busy?</li>
+                        <li><strong>QRM</strong> - Man-made interference</li>
+                        <li><strong>QRN</strong> - Static/atmospheric noise</li>
+                        <li><strong>QRS</strong> - Send slower</li>
+                        <li><strong>QRT</strong> - Stop transmitting</li>
+                        <li><strong>QRZ?</strong> - Who is calling me?</li>
+                        <li><strong>QSB</strong> - Signal fading</li>
+                        <li><strong>QSL</strong> - I acknowledge/QSL card</li>
+                        <li><strong>QSO</strong> - Two-way communication</li>
+                        <li><strong>QSY</strong> - Change frequency</li>
+                        <li><strong>QTH</strong> - Location/address</li>
+                    </ul>
+                    
+                    <h3>Common CW Abbreviations</h3>
+                    <div class="abbreviation-grid">
+                        <div class="abbreviation-item">
+                            <strong>AGN</strong> - Again
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>ANT</strong> - Antenna
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>BK</strong> - Break/Back to you
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>CU</strong> - See you
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>DE</strong> - From/This is
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>DX</strong> - Distance/Foreign country
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>FB</strong> - Fine business (good)
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>GA</strong> - Good afternoon
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>GM</strong> - Good morning
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>GN</strong> - Good night
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>HI</strong> - Laughter
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>HR</strong> - Here/Hear
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>K</strong> - Go ahead/Over
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>OM</strong> - Old man (ham)
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>PSE</strong> - Please
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>R</strong> - Roger/Received
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>RIG</strong> - Station equipment
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>RST</strong> - Readability-Signal-Tone
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>TNX</strong> - Thanks
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>TU</strong> - Thank you
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>UR</strong> - Your/You're
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>VY</strong> - Very
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>WX</strong> - Weather
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>YL</strong> - Young lady
+                        </div>
+                        <div class="abbreviation-item">
+                            <strong>73</strong> - Best wishes
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contest Information -->
+                <div class="resource-card">
+                    <h2>🏆 Contest Reference</h2>
+                    
+                    <h3>Popular CW Contests</h3>
+                    <p>Major contests that Head Copy helps you practice for:</p>
+                    
+                    <h3>CQ WPX Contest</h3>
+                    <ul>
+                        <li>Exchange: RST + Serial Number</li>
+                        <li>Focus: Prefixes and call sign diversity</li>
+                        <li>When: Last full weekends of March and October</li>
+                    </ul>
+                    
+                    <h3>CWops CWT (CW Test)</h3>
+                    <ul>
+                        <li>Exchange: Name + State/Province/Country</li>
+                        <li>When: Wednesday, Thursday (1300Z, 1900Z, 0300Z)</li>
+                        <li>Duration: 1 hour</li>
+                    </ul>
+                    
+                    <h3>ARRL Slow Speed Test (SST)</h3>
+                    <ul>
+                        <li>Exchange: RST + State/Province/DX</li>
+                        <li>Speed: Maximum 20 WPM</li>
+                        <li>Perfect for beginners</li>
+                    </ul>
+                    
+                    <h3>CWops Mini-Speed Test (MST)</h3>
+                    <ul>
+                        <li>Exchange: Name + Serial Number</li>
+                        <li>When: Multiple times weekly</li>
+                        <li>Duration: 30 minutes</li>
+                    </ul>
+                    
+                    <h3>NCCC NS Sprint Ladder</h3>
+                    <ul>
+                        <li>Exchange: Serial + Name + State/Province</li>
+                        <li>Fast-paced sprint format</li>
+                        <li>When: Weekly NS events</li>
+                    </ul>
+                </div>
+
+                <!-- Learning Tips -->
+                <div class="resource-card">
+                    <h2>💡 Learning Tips & Techniques</h2>
+                    
+                    <h3>The Koch Method</h3>
+                    <p>Start with full speed characters but shorter combinations. Master characters at target speed, then increase length.</p>
+                    
+                    <h3>Farnsworth Timing</h3>
+                    <p>Learn characters at high speed (18+ WPM) but with extra spacing between characters. Gradually reduce spacing.</p>
+                    
+                    <h3>Practice Progression</h3>
+                    <ul>
+                        <li>Start with individual characters</li>
+                        <li>Move to random character groups</li>
+                        <li>Practice common words</li>
+                        <li>Learn standard abbreviations</li>
+                        <li>Practice callsigns</li>
+                        <li>Try QSO simulation</li>
+                        <li>Enter actual contests</li>
+                    </ul>
+                    
+                    <h3>Memory Aids</h3>
+                    <ul>
+                        <li><strong>A (•—)</strong> - "A-bout"</li>
+                        <li><strong>B (—•••)</strong> - "Baa-baa-baa-baa"</li>
+                        <li><strong>C (—•—•)</strong> - "Come-in-come-in"</li>
+                        <li><strong>D (—••)</strong> - "Dog-gy-dog"</li>
+                        <li><strong>G (——•)</strong> - "God-save-the"</li>
+                        <li><strong>K (—•—)</strong> - "Kan-ga-roo"</li>
+                        <li><strong>Q (——•—)</strong> - "God-save-the-Queen"</li>
+                    </ul>
+                </div>
+
+                <!-- Technical Reference -->
+                <div class="resource-card">
+                    <h2>⚙️ Technical Reference</h2>
+                    
+                    <h3>RST System</h3>
+                    <p>Standard signal reporting system for CW:</p>
+                    
+                    <h3>Readability (R)</h3>
+                    <ul>
+                        <li><strong>1</strong> - Unreadable</li>
+                        <li><strong>2</strong> - Barely readable</li>
+                        <li><strong>3</strong> - Readable with difficulty</li>
+                        <li><strong>4</strong> - Readable with no difficulty</li>
+                        <li><strong>5</strong> - Perfectly readable</li>
+                    </ul>
+                    
+                    <h3>Signal Strength (S)</h3>
+                    <ul>
+                        <li><strong>1</strong> - Faint signals, barely perceptible</li>
+                        <li><strong>5</strong> - Fairly good signals</li>
+                        <li><strong>9</strong> - Extremely strong signals</li>
+                    </ul>
+                    
+                    <h3>Tone (T)</h3>
+                    <ul>
+                        <li><strong>1</strong> - Sixty cycle AC or less, very rough and broad</li>
+                        <li><strong>5</strong> - Rough AC tone, rectified but not filtered</li>
+                        <li><strong>9</strong> - Perfect DC tone, pure and chirpless</li>
+                    </ul>
+                    
+                    <p><strong>Common Reports:</strong> 599 (perfect), 579 (good), 559 (fair)</p>
+                </div>
+
+                <!-- Band Plans -->
+                <div class="resource-card">
+                    <h2>📻 CW Band Plans</h2>
+                    
+                    <h3>HF CW Frequencies</h3>
+                    <p>Primary CW portions of amateur bands:</p>
+                    
+                    <ul>
+                        <li><strong>80m:</strong> 3.500 - 3.600 MHz</li>
+                        <li><strong>40m:</strong> 7.000 - 7.125 MHz</li>
+                        <li><strong>20m:</strong> 14.000 - 14.070 MHz</li>
+                        <li><strong>15m:</strong> 21.000 - 21.070 MHz</li>
+                        <li><strong>10m:</strong> 28.000 - 28.070 MHz</li>
+                    </ul>
+                    
+                    <h3>QRS (Slow Speed) Frequencies</h3>
+                    <ul>
+                        <li><strong>80m:</strong> 3.555 MHz</li>
+                        <li><strong>40m:</strong> 7.055 MHz</li>
+                        <li><strong>20m:</strong> 14.055 MHz</li>
+                    </ul>
+                    
+                    <h3>Contest Activity</h3>
+                    <p>During contests, activity spreads across entire CW subbands. Popular contest frequencies include the lower portions of each band.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="clubs.html">Radio Clubs</a>
+                    <a href="about_me.html">About</a>
+                </div>
+                <p>&copy; 2024 Head Copy. Resources for the ham radio community by K8APP.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

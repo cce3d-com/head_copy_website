@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Developer - Head Copy</title>
+    <meta name="description" content="Meet the developer behind Head Copy - a passionate ham radio operator and software developer dedicated to preserving and promoting CW.">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-blue: #007AFF;
+            --dark-blue: #005DB8;
+            --light-blue: #E3F2FD;
+            --navy: #1A365D;
+            --text-dark: #2D3748;
+            --text-light: #718096;
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--white);
+        }
+        
+        .logo::before {
+            content: "📻";
+            font-size: 1.8rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 40px 0;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--gray-50), var(--light-blue));
+            border-radius: 20px;
+        }
+        
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            background: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+        
+        .callsign {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content-section {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+        
+        .content-section h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .content-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            color: var(--primary-blue);
+        }
+        
+        .content-section p {
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        
+        .content-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .content-section li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-dark);
+        }
+        
+        .content-section li::before {
+            content: "•";
+            color: var(--primary-blue);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .highlight-box {
+            background: var(--light-blue);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-blue);
+            margin: 1.5rem 0;
+        }
+        
+        .highlight-box p {
+            margin-bottom: 0;
+            font-style: italic;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--gray-50);
+            border-radius: 12px;
+            border: 2px solid var(--light-blue);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, var(--navy), var(--primary-blue));
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+        
+        .contact-section h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 40px 0 20px;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .contact-link {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Head Copy</a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="userguide.htm">User Guide</a></li>
+                <li><a href="clubs.html">Radio Clubs</a></li>
+                <li><a href="about_me.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="profile-photo">👨‍💻</div>
+                <h1>Carson Wilson</h1>
+                <div class="callsign">K8APP</div>
+                <p>Software developer, ham radio operator, and passionate advocate for preserving the art of Morse Code communication</p>
+            </div>
+
+            <!-- About Section -->
+            <div class="content-section">
+                <h2>🎯 My Mission</h2>
+                <p>I created Head Copy because I believe Morse Code is more than just dots and dashes – it's a beautiful, efficient form of communication that deserves to thrive in the modern world. As both a software developer and amateur radio operator, I saw an opportunity to bridge traditional CW practices with cutting-edge technology.</p>
+                
+                <div class="highlight-box">
+                    <p>❤️ <strong>This is a solo project</strong> – every feature, every line of code, and every design decision comes from my passion for both amateur radio and creating exceptional user experiences. Your support through subscriptions directly enables me to continue improving and expanding Head Copy.</p>
+                </div>
+                
+                <p>Unlike other CW training apps that focus solely on character recognition, Head Copy emphasizes real-world application. I wanted to create something that would actually prepare operators for on-air contacts, contests, and the authentic amateur radio experience.</p>
+            </div>
+
+            <!-- Ham Radio Journey -->
+            <div class="content-section">
+                <h2>📻 Amateur Radio Journey</h2>
+                <p>My path into amateur radio began with curiosity about communication technology and evolved into a deep appreciation for the traditions and community of ham radio. Getting licensed opened up a world of technical learning, emergency communication, and lifelong friendships.</p>
+                
+                <h3>Key Milestones</h3>
+                <ul>
+                    <li><strong>First License:</strong> Started with Technician class, quickly upgraded to General</li>
+                    <li><strong>CW Discovery:</strong> Initially intimidated by Morse Code, became fascinated by its elegance</li>
+                    <li><strong>Contest Participation:</strong> Active in CW contests, especially WPX and CWops CWT</li>
+                    <li><strong>Elmering:</strong> Love helping new hams discover the joy of CW operation</li>
+                    <li><strong>Technical Interests:</strong> Digital modes, software-defined radio, and antenna modeling</li>
+                </ul>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <div class="stat-label">Years Licensed</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">30+</span>
+                        <div class="stat-label">WPM CW Speed</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100+</span>
+                        <div class="stat-label">Contest QSOs</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">∞</span>
+                        <div class="stat-label">Passion for CW</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Development Philosophy -->
+            <div class="content-section">
+                <h2>💻 Development Philosophy</h2>
+                <p>As a software developer with over a decade of experience, I bring professional standards and user-centered design to amateur radio applications. Head Copy isn't just a side project – it's built with the same care and attention to detail I'd put into any commercial application.</p>
+                
+                <h3>Core Principles</h3>
+                <ul>
+                    <li><strong>User Experience First:</strong> Every feature is designed with the end user in mind</li>
+                    <li><strong>Authentic Practice:</strong> Training should reflect real on-air conditions and procedures</li>
+                    <li><strong>Progressive Learning:</strong> Support operators from beginner to expert levels</li>
+                    <li><strong>Community Focused:</strong> Built by and for the amateur radio community</li>
+                    <li><strong>Continuous Improvement:</strong> Regular updates based on user feedback</li>
+                </ul>
+                
+                <h3>Technical Approach</h3>
+                <p>Head Copy is built using modern iOS development practices with SwiftUI, leveraging advanced audio synthesis, real-time contest data integration, and carefully crafted user interface design. The app's QSO simulator represents thousands of hours of research into authentic amateur radio procedures and databases.</p>
+            </div>
+
+            <!-- Why This Matters -->
+            <div class="content-section">
+                <h2>🌟 Why CW Training Matters</h2>
+                <p>In an age of digital communication, Morse Code remains relevant and valuable for several reasons:</p>
+                
+                <ul>
+                    <li><strong>Emergency Communications:</strong> CW cuts through noise when other modes fail</li>
+                    <li><strong>Spectrum Efficiency:</strong> Narrowband CW maximizes our limited frequency allocations</li>
+                    <li><strong>Mental Discipline:</strong> Learning CW develops focus, memory, and cognitive skills</li>
+                    <li><strong>Historical Preservation:</strong> We're the guardians of this elegant communication art</li>
+                    <li><strong>Universal Language:</strong> CW transcends language barriers in international contacts</li>
+                    <li><strong>Technical Excellence:</strong> Operating CW well requires skill and precision</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <p><strong>My Goal:</strong> Head Copy aims to make CW training enjoyable, effective, and accessible to operators worldwide. Every feature is designed to build real skills that transfer directly to on-air operation.</p>
+                </div>
+            </div>
+
+            <!-- Future Vision -->
+            <div class="content-section">
+                <h2>🚀 Future Vision</h2>
+                <p>Head Copy is continuously evolving based on user feedback and my ongoing involvement in the amateur radio community. Future development focuses on:</p>
+                
+                <ul>
+                    <li><strong>Advanced AI Integration:</strong> Personalized learning paths and adaptive difficulty</li>
+                    <li><strong>Social Features:</strong> Connect with other CW operators for practice sessions</li>
+                    <li><strong>Expanded Contest Support:</strong> Additional contest simulations and real-time integration</li>
+                    <li><strong>Educational Content:</strong> In-depth tutorials and operating guides</li>
+                    <li><strong>Platform Expansion:</strong> Bringing Head Copy to additional platforms</li>
+                    <li><strong>Community Integration:</strong> Deeper connections with CW clubs and organizations</li>
+                </ul>
+                
+                <p>Your feedback and support make these improvements possible. As a solo developer, every subscription directly contributes to making Head Copy better for the entire amateur radio community.</p>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="contact-section">
+                <h2>📧 Get In Touch</h2>
+                <p>I love hearing from fellow hams and CW enthusiasts! Whether you have feedback, suggestions, or just want to chat about amateur radio, don't hesitate to reach out.</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:support@headcopy.app" class="contact-link">
+                        📧 Email Support
+                    </a>
+                    <a href="https://qrz.com/db/K8APP" class="contact-link">
+                        📻 QRZ Profile
+                    </a>
+                </div>
+                
+                <p style="margin-top: 1.5rem; opacity: 0.9; font-size: 0.95rem;">
+                    <strong>On-Air:</strong> You might catch me on the CW bands, especially during contests and CWops CWT sessions. Always happy to chat with fellow CW enthusiasts!
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="userguide.htm">User Guide</a>
+                    <a href="clubs.html">Radio Clubs</a>
+                </div>
+                <p>&copy; 2024 Head Copy. Created with ❤️ for the amateur radio community by K8APP.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
