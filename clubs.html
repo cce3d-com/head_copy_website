@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW Radio Clubs - Head Copy</title>
+    <meta name="description" content="Connect with CW and amateur radio clubs worldwide. Find local and international organizations dedicated to Morse Code and ham radio.">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-blue: #007AFF;
+            --dark-blue: #005DB8;
+            --light-blue: #E3F2FD;
+            --navy: #1A365D;
+            --text-dark: #2D3748;
+            --text-light: #718096;
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--white);
+        }
+        
+        .logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 40px 0;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--gray-50), var(--light-blue));
+            border-radius: 20px;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Clubs List */
+        .clubs-container {
+            margin-bottom: 4rem;
+        }
+        
+        .clubs-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .club-item {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border: 2px solid var(--gray-100);
+            border-radius: 12px;
+        }
+        
+        .club-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .club-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+        
+        .club-logo {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+        
+        .club-content {
+            display: flex;
+            flex: 1;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+        
+        .club-info {
+            flex: 1;
+        }
+        
+        .club-info h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+        
+        .club-info h3 {
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .club-info p {
+            color: var(--text-dark);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .club-link {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-blue);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+            flex-shrink: 0;
+            align-self: flex-start;
+        }
+        
+        .club-link:hover {
+            background: var(--dark-blue);
+        }
+        
+        /* Add Your Club Section */
+        .add-club-section {
+            background: var(--light-blue);
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .add-club-section h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+        
+        .add-club-section p {
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .add-club-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--gray-100);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        .submit-btn {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: var(--dark-blue);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 40px 0 20px;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .club-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .club-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .club-logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="app-icon.png" alt="Head Copy App Icon" />
+                Head Copy
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="userguide.htm">User Guide</a></li>
+                <li><a href="clubs.html">Radio Clubs</a></li>
+                <li><a href="about_me.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>📻 CW Radio Clubs</h1>
+                <p>Connect with fellow CW enthusiasts and amateur radio operators through these premier organizations</p>
+            </div>
+
+            <!-- Clubs List -->
+            <div class="clubs-container">
+                <div class="clubs-list">
+                    <div class="club-item">
+                        <div class="club-header">
+                            <img src="cwops.png" alt="CWops Logo" class="club-logo" />
+                            <div class="club-content">
+                                <div class="club-info">
+                                    <h2>CWops</h2>
+                                    <h3>CW Operators</h3>
+                                    <p>International organization promoting CW operation and amateur radio through contests, training, and fellowship.</p>
+                                </div>
+                                <a href="https://cwops.org" class="club-link" target="_blank">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="club-item">
+                        <div class="club-header">
+                            <img src="skcc.png" alt="SKCC Logo" class="club-logo" />
+                            <div class="club-content">
+                                <div class="club-info">
+                                    <h2>SKCC</h2>
+                                    <h3>Straight Key Century Club</h3>
+                                    <p>Dedicated to preserving the art of using mechanical keys for CW operation and building skills.</p>
+                                </div>
+                                <a href="https://skccgroup.com" class="club-link" target="_blank">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="club-item">
+                        <div class="club-header">
+                            <img src="nccc.jpg" alt="NCCC Logo" class="club-logo" />
+                            <div class="club-content">
+                                <div class="club-info">
+                                    <h2>NCCC</h2>
+                                    <h3>Northern California Contest Club</h3>
+                                    <p>Premier contest club hosting weekly CW sprint competitions and fostering contest excellence.</p>
+                                </div>
+                                <a href="https://nccc.cc" class="club-link" target="_blank">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="club-item">
+                        <div class="club-header">
+                            <img src="licw.png" alt="LICW Logo" class="club-logo" />
+                            <div class="club-content">
+                                <div class="club-info">
+                                    <h2>LICW</h2>
+                                    <h3>Long Island CW Club</h3>
+                                    <p>Regional club focused on CW operation, training, and connecting CW enthusiasts in the NY area.</p>
+                                </div>
+                                <a href="https://longislandcwclub.org" class="club-link" target="_blank">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Your Club Section -->
+            <div class="add-club-section">
+                <h2>📋 Add Your Club</h2>
+                <p>Is your CW or amateur radio club missing? Let us know and we'll consider adding it to our list!</p>
+                
+                <div class="add-club-form">
+                    <form action="mailto:k8app@cce3d.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="club-name">Club Name *</label>
+                            <input type="text" id="club-name" name="club-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="club-website">Club Website</label>
+                            <input type="url" id="club-website" name="club-website" placeholder="https://...">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="club-description">Brief Description *</label>
+                            <textarea id="club-description" name="club-description" placeholder="Tell us about your club's focus, activities, and membership..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-info">Your Contact Info *</label>
+                            <input type="text" id="contact-info" name="contact-info" placeholder="Your name and callsign" required>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Submit Club Info</button>
+                    </form>
+                </div>
+                
+                <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">
+                    We review all submissions and will add clubs that align with CW and amateur radio interests.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="userguide.htm">User Guide</a>
+                    <a href="about_me.html">About</a>
+                </div>
+                <p>&copy; 2024 Head Copy. Created with ❤️ for the amateur radio community by K8APP.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
