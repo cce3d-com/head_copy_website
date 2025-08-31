@@ -3,10 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About the Developer - Head Copy</title>
-    <meta name="description" content="Meet the developer behind Head Copy - a passionate ham radio operator and software developer dedicated to preserving and promoting CW.">
+    <title>About Carson K8APP - Head Copy Developer & Ham Radio Operator</title>
+    <meta name="description" content="Meet Carson K8APP, the developer behind Head Copy CW training app. Software developer, CWops member, and passionate advocate for preserving Morse Code communication in amateur radio.">
+    <meta name="keywords" content="Carson K8APP, Head Copy developer, ham radio, amateur radio, morse code, CW, software developer, CWops, SKCC, LICW, amateur radio app developer">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="author" content="Carson K8APP">
+    <link rel="canonical" href="https://www.head-copy.com/about_me.html">
+    <meta name="theme-color" content="#007AFF">
     
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Carson K8APP - Head Copy Developer">
+    <meta property="og:description" content="Meet the developer behind Head Copy CW training app - a passionate ham radio operator and software developer.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://www.head-copy.com/about_me.html">
+    <meta property="og:image" content="https://www.head-copy.com/app-icon.png">
+    <meta property="profile:first_name" content="Carson">
+    <meta property="profile:username" content="K8APP">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="About Carson K8APP - Head Copy Developer">
+    <meta name="twitter:description" content="Meet the developer behind Head Copy CW training app">
+    <meta name="twitter:image" content="https://www.head-copy.com/app-icon.png">
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Structured Data for Person -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Carson K8APP",
+        "givenName": "Carson",
+        "additionalName": "CAR",
+        "alternateName": "K8APP",
+        "description": "Software developer and ham radio operator, creator of Head Copy CW training app",
+        "url": "https://www.head-copy.com/about_me.html",
+        "sameAs": [
+            "https://qrz.com/db/K8APP"
+        ],
+        "jobTitle": "Software Developer",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Head Copy"
+        },
+        "memberOf": [
+            {
+                "@type": "Organization",
+                "name": "CWops",
+                "identifier": "3732"
+            },
+            {
+                "@type": "Organization", 
+                "name": "SKCC",
+                "identifier": "29340T"
+            },
+            {
+                "@type": "Organization",
+                "name": "LICW", 
+                "identifier": "7238"
+            }
+        ],
+        "knowsAbout": [
+            "Morse Code",
+            "Amateur Radio",
+            "CW Training",
+            "iOS Development",
+            "Software Development",
+            "Ham Radio Contests"
+        ],
+        "email": "k8app@cce3d.com"
+    }
+    </script>
     
     <style>
         * {
@@ -66,9 +134,10 @@
             color: var(--white);
         }
         
-        .logo::before {
-            content: "📻";
-            font-size: 1.8rem;
+        .logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
         }
         
         .nav-links {
@@ -93,6 +162,40 @@
             min-height: calc(100vh - 200px);
         }
         
+        /* Breadcrumb Navigation */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+        }
+        
+        .breadcrumb-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb-link:hover {
+            color: var(--dark-blue);
+            text-decoration: underline;
+        }
+        
+        .breadcrumb-separator {
+            color: var(--text-light);
+            font-weight: bold;
+        }
+        
+        .breadcrumb-current {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        
         .hero-section {
             text-align: center;
             margin-bottom: 4rem;
@@ -104,15 +207,23 @@
         .profile-photo {
             width: 150px;
             height: 150px;
-            border-radius: 50%;
+            border-radius: 32px;
             margin: 0 auto 2rem;
-            background: var(--primary-blue);
+            background: var(--white);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            color: var(--white);
             box-shadow: var(--shadow-lg);
+            border: 3px solid var(--primary-blue);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .profile-photo img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 28px;
         }
         
         .hero-section h1 {
@@ -123,10 +234,42 @@
         }
         
         .callsign {
-            font-size: 1.5rem;
+            font-size: 2.5rem;
             color: var(--primary-blue);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 122, 255, 0.2);
+            letter-spacing: 0.1em;
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+        }
+        
+        .club-memberships {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--white), var(--light-blue));
+            border-radius: 12px;
+            border: 2px solid var(--primary-blue);
+            box-shadow: var(--shadow);
+            display: inline-block;
+        }
+        
+        .club-item {
+            display: inline-block;
+            margin: 0 1rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+        
+        .club-name {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+        
+        .club-number {
+            color: var(--dark-blue);
+            font-weight: 500;
+            margin-left: 0.25rem;
         }
         
         .hero-section p {
@@ -328,9 +471,13 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="index.html" class="logo">Head Copy</a>
+            <a href="index.html" class="logo">
+                <img src="app-icon.png" alt="Head Copy App Icon" />
+                Head Copy
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
                 <li><a href="userguide.htm">User Guide</a></li>
                 <li><a href="clubs.html">Radio Clubs</a></li>
                 <li><a href="about_me.html">About</a></li>
@@ -340,12 +487,32 @@
 
     <main>
         <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html" class="breadcrumb-link">← Back to Home</a>
+                <span class="breadcrumb-separator">•</span>
+                <span class="breadcrumb-current">About the Developer</span>
+            </nav>
+            
             <!-- Hero Section -->
             <div class="hero-section">
-                <div class="profile-photo">👨‍💻</div>
+                <div class="profile-photo">
+                    <img src="app-icon.png" alt="Head Copy App Icon" />
+                </div>
                 <h1>Carson "CAR"</h1>
                 <div class="callsign">K8APP</div>
-                <p>Software developer, ham radio operator, and passionate advocate for preserving the art of Morse Code communication</p>
+                <div class="club-memberships">
+                    <span class="club-item">
+                        <span class="club-name">CWops</span><span class="club-number">3732</span>
+                    </span>
+                    <span class="club-item">
+                        <span class="club-name">SKCC</span><span class="club-number">29340T</span>
+                    </span>
+                    <span class="club-item">
+                        <span class="club-name">LICW</span><span class="club-number">7238</span>
+                    </span>
+                </div>
+                <p>Software developer, ham radio operator, and proud father of two — passionate about preserving the art of Morse code communication.</p>
             </div>
 
             <!-- About Section -->
@@ -403,6 +570,7 @@
                 <p>Head Copy is continuously evolving based on user feedback and my ongoing involvement in the amateur radio community. Future development focuses on:</p>
                 
                 <ul>
+                    <li><strong>CarPlay Support:</strong> Practice during commutes with full CarPlay integration</li>
                     <li><strong>Advanced AI Integration:</strong> Personalized learning paths and adaptive difficulty</li>
                     <li><strong>Social Features:</strong> Connect with other CW operators for practice sessions</li>
                     <li><strong>Expanded Contest Support:</strong> Additional contest simulations and real-time integration</li>
@@ -444,7 +612,7 @@
                     <a href="userguide.htm">User Guide</a>
                     <a href="clubs.html">Radio Clubs</a>
                 </div>
-                <p>&copy; 2024 Head Copy. Created with ❤️ for the amateur radio community by K8APP.</p>
+                <p>&copy; 2025 Head-Copy.com Created with ❤️ for the amateur radio community by K8APP.</p>
             </div>
         </div>
     </footer>

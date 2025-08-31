@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://www.head-copy.com/</loc>
+        <lastmod>2025-08-31</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://www.head-copy.com/app-icon.png</image:loc>
+            <image:title>Head Copy App Icon</image:title>
+            <image:caption>Professional Morse Code training app for ham radio</image:caption>
+        </image:image>
+        <video:video>
+            <video:thumbnail_loc>https://www.head-copy.com/IMG_6322.PNG</video:thumbnail_loc>
+            <video:title>POTA Mode Demo - Head Copy</video:title>
+            <video:description>Parks on the Air training mode demonstration</video:description>
+            <video:content_loc>https://www.head-copy.com/pota.mp4</video:content_loc>
+            <video:duration>75</video:duration>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+    
+    <!-- User Guide -->
+    <url>
+        <loc>https://www.head-copy.com/userguide.htm</loc>
+        <lastmod>2025-08-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Radio Clubs -->
+    <url>
+        <loc>https://www.head-copy.com/clubs.html</loc>
+        <lastmod>2025-08-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- About -->
+    <url>
+        <loc>https://www.head-copy.com/about_me.html</loc>
+        <lastmod>2025-08-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+</urlset>

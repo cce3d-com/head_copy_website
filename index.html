@@ -5,16 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Head Copy - Professional CW Training for Ham Radio</title>
     <meta name="description" content="Master Morse Code with Head Copy - the ultimate CW training app for ham radio operators. Realistic QSO simulators, contest practice, and professional features.">
-    <meta name="keywords" content="morse code, CW, ham radio, amateur radio, training, QSO simulator, contest, ARRL, SKCC, CWops">
+    <meta name="keywords" content="morse code, CW, ham radio, amateur radio, training, QSO simulator, contest, ARRL, SKCC, CWops, POTA, head copy, no pencil required">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="https://www.head-copy.com/">
+    <meta name="author" content="K8APP">
+    <meta name="theme-color" content="#007AFF">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Head Copy - Professional CW Training">
     <meta property="og:description" content="Master Morse Code with realistic QSO simulators and contest practice">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.head-copy.com">
+    <meta property="og:image" content="https://www.head-copy.com/app-icon.png">
+    <meta property="og:image:alt" content="Head Copy App Icon">
+    <meta property="og:site_name" content="Head Copy">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Head Copy - Professional CW Training">
+    <meta name="twitter:description" content="Master Morse Code with realistic QSO simulators and contest practice">
+    <meta name="twitter:image" content="https://www.head-copy.com/app-icon.png">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="app-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="app-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="app-icon.png">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Head Copy",
+        "alternateName": "Head Copy - Professional CW Training",
+        "description": "Master Morse Code with Head Copy - the ultimate CW training app for ham radio operators. Realistic QSO simulators, contest practice, and professional features.",
+        "applicationCategory": "EducationApplication",
+        "operatingSystem": "iOS",
+        "url": "https://www.head-copy.com",
+        "downloadUrl": "https://apps.apple.com/app/id6751758685",
+        "author": {
+            "@type": "Person",
+            "name": "K8APP"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Head Copy",
+            "url": "https://www.head-copy.com"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        },
+        "screenshot": [
+            "https://www.head-copy.com/IMG_6322.PNG",
+            "https://www.head-copy.com/IMG_6323.PNG",
+            "https://www.head-copy.com/IMG_6324.PNG"
+        ],
+        "featureList": [
+            "Realistic QSO simulators",
+            "Contest training (CWops, POTA, SKCC)",
+            "POTA mode with authentic callsigns",
+            "Interactive Morse code chart",
+            "No pencil required training",
+            "Professional CW training tools"
+        ],
+        "keywords": "morse code, CW, ham radio, amateur radio, training, QSO simulator, contest, POTA, head copy"
+    }
+    </script>
     
     <style>
         * {
@@ -481,6 +543,47 @@
             line-height: 1.6;
         }
         
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .faq-item {
+            background: var(--gray-50);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .faq-item h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+        
+        .faq-item p {
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .faq-item a {
+            color: var(--primary-blue);
+            text-decoration: underline;
+        }
+        
+        .faq-item a:hover {
+            color: var(--dark-blue);
+        }
+
         /* Download Section */
         .download-section {
             padding: 80px 0;
@@ -626,6 +729,7 @@
                 </div>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="userguide.htm">User Guide</a></li>
                 <li><a href="clubs.html">Radio Clubs</a></li>
                 <li><a href="about_me.html">About</a></li>
@@ -819,18 +923,64 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about Head Copy and Morse code training</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What is "head copy" in Morse code?</h3>
+                    <p>Head copy is the ability to understand Morse code directly in your mind without writing it down. It's the gold standard for CW proficiency, allowing you to participate in conversations naturally without needing a pencil and paper.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How does Head Copy differ from other CW training apps?</h3>
+                    <p>Unlike apps that use random text or outdated content, Head Copy features realistic <a href="#features">QSO simulators</a> with authentic callsigns from actual contest databases, making your training as realistic as on-air operation.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What contests can I practice with Head Copy?</h3>
+                    <p>Head Copy includes training modes for <strong>CWops CWT</strong>, <strong>ARRL contests</strong>, <strong>CQ WPX</strong>,<strong>SKCC events</strong>, <strong>NS Sprint</strong>, and <strong>POTA activations</strong> with authentic exchanges and timing.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is Head Copy suitable for beginners?</h3>
+                    <p>Absolutely! Head Copy includes an <strong>interactive Morse code chart</strong> and <strong>LICW beginner training</strong> that's perfect for learning your first characters, plus advanced features as you progress.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do I need an internet connection?</h3>
+                    <p>Head Copy works offline for most training modes. Internet is only required for downloading contest calendar updates and accessing the latest club member databases.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What platforms does Head Copy support?</h3>
+                    <p>Head Copy is currently available for <strong>iOS devices</strong> including iPhone and iPad. CarPlay support is coming soon for practicing during commutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Download Section -->
     <section class="download-section">
         <div class="container">
             <div class="section-header">
                 <h2 style="color: var(--white);">Ready to Master CW?</h2>
-                <p style="color: var(--white); opacity: 0.9;">Download Head Copy and start your journey to CW excellence today</p>
+                <p style="color: var(--white); opacity: 0.9;">Join thousands of ham radio operators improving their Morse code skills with Head Copy</p>
             </div>
             
             <div style="text-align: center; margin-top: 2rem;">
-                <a href="https://apps.apple.com/app/id6751758685" style="display: inline-block;">
-                    <img src="en-us.svg" alt="Download on the App Store" style="height: 60px; display: block;" />
+                <a href="https://apps.apple.com/app/id6751758685" style="display: inline-block;" rel="noopener" target="_blank">
+                    <img src="en-us.svg" alt="Download Head Copy on the App Store" style="height: 60px; display: block;" />
                 </a>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem; color: var(--white); opacity: 0.8;">
+                <p><small>Free download • iOS 14.0+ • iPhone & iPad compatible</small></p>
             </div>
         </div>
     </section>
