@@ -34,6 +34,7 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--white);
+            padding-top: 80px;
         }
         
         .container {
@@ -47,6 +48,10 @@
             background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
             color: var(--white);
             padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
             box-shadow: var(--shadow);
         }
         
@@ -92,6 +97,40 @@
         main {
             padding: 40px 0;
             min-height: calc(100vh - 200px);
+        }
+        
+        /* Breadcrumb Navigation */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+        }
+        
+        .breadcrumb-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb-link:hover {
+            color: var(--dark-blue);
+            text-decoration: underline;
+        }
+        
+        .breadcrumb-separator {
+            color: var(--text-light);
+            font-weight: bold;
+        }
+        
+        .breadcrumb-current {
+            color: var(--text-dark);
+            font-weight: 500;
         }
         
         .page-header {
@@ -349,7 +388,8 @@
             </a>
             <ul class="nav-links">
                 <li><a href="index.html#features">Features</a></li>
-                <li><a href="userguide.htm">User Guide</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="userguide.html">User Guide</a></li>
                 <li><a href="clubs.html">Radio Clubs</a></li>
                 <li><a href="about_me.html">About</a></li>
             </ul>
@@ -358,6 +398,13 @@
 
     <main>
         <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html" class="breadcrumb-link">← Back to Home</a>
+                <span class="breadcrumb-separator">•</span>
+                <span class="breadcrumb-current">Radio Clubs</span>
+            </nav>
+            
             <!-- Page Header -->
             <div class="page-header">
                 <h1>📻 CW Radio Clubs</h1>
