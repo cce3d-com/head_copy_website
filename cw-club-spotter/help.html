@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW Club Spotter - Help Guide</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #007AFF;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.2em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        h2 {
+            color: #007AFF;
+            border-bottom: 2px solid #007AFF;
+            padding-bottom: 8px;
+            margin-top: 40px;
+            font-size: 1.4em;
+        }
+        h3 {
+            color: #1E40AF;
+            margin-top: 30px;
+            font-size: 1.2em;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .feature-card {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #007AFF;
+        }
+        .tab-section {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .step-list {
+            counter-reset: step-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+        .step-list li {
+            counter-increment: step-counter;
+            margin: 15px 0;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            position: relative;
+            padding-left: 50px;
+        }
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 15px;
+            top: 10px;
+            background: #007AFF;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .tip {
+            background: #e6f3ff;
+            border-left: 4px solid #007AFF;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9em;
+        }
+        .contact-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CW Club Spotter</h1>
+        <div class="subtitle">Live CW Club Activity Tracker</div>
+
+        <h2>Introduction</h2>
+        <p>CW Club Spotter is your gateway to the global CW community. This app provides real-time monitoring of CW (Morse code) activity from the Reverse Beacon Network (RBN), allowing you to track club members, monitor contests, and discover active CW operators worldwide.</p>
+
+        <p>Whether you're a contest operator seeking competition insights, a club member looking for fellow operators, or a CW enthusiast exploring band activity, CW Club Spotter delivers the live data you need in an intuitive, easy-to-use interface.</p>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Real-Time Tracking</h3>
+                <p>Live spots updated every 30 seconds to 3 minutes, showing active CW operators as they're spotted by the global RBN network.</p>
+            </div>
+            <div class="feature-card">
+                <h3>34+ CW Clubs</h3>
+                <p>Monitor activity from major clubs including CWOPS, FOC, FISTS, HSC groups, SKCC, NAQCC, and many more.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Advanced Filtering</h3>
+                <p>Customize your view by bands, clubs, speed ranges, geographic regions, and personal preferences.</p>
+            </div>
+            <div class="feature-card">
+                <h3>iPad Optimized</h3>
+                <p>Designed for both iPhone and iPad with optimized layouts that make the most of your device's screen space.</p>
+            </div>
+        </div>
+
+        <h2>Getting Started</h2>
+        
+        <ol class="step-list">
+            <li><strong>Launch the app</strong> - CW Club Spotter will immediately begin loading live spots from the RBN network.</li>
+            <li><strong>Set your callsign</strong> - Go to Filters → Settings → Own Call and enter your amateur radio callsign to personalize your experience.</li>
+            <li><strong>Configure filters</strong> - Select the clubs, bands, and speed ranges you're interested in monitoring.</li>
+            <li><strong>Adjust refresh rate</strong> - Choose how often you want new data (30s-180s) based on your needs and data usage preferences.</li>
+            <li><strong>Start monitoring</strong> - Return to Club Spots to see your customized live activity feed.</li>
+        </ol>
+
+        <h2>App Overview</h2>
+        <p>CW Club Spotter is organized into five main sections, accessible via the tab bar at the bottom:</p>
+
+        <div class="tab-section">
+            <h3>📡 Club Spots</h3>
+            <p>The main screen showing live CW spots. Each entry displays:</p>
+            <ul>
+                <li><strong>Callsign</strong> - The spotted operator's call sign</li>
+                <li><strong>Frequency</strong> - Operating frequency in MHz</li>
+                <li><strong>Speed</strong> - CW speed in WPM (words per minute)</li>
+                <li><strong>Clubs</strong> - Associated club memberships (color-coded)</li>
+                <li><strong>Age</strong> - How long ago the spot was reported</li>
+                <li><strong>Spotters</strong> - Number of RBN stations that heard this signal</li>
+            </ul>
+            
+            <div class="tip">
+                <strong>Tip:</strong> Recent spots (age ≤ 1 minute) are highlighted with a pink background. Tap "Show details" for complete spotter information and signal strength data.
+            </div>
+        </div>
+
+        <div class="tab-section">
+            <h3>🔧 Filters</h3>
+            <p>Your command center for customizing what spots you see:</p>
+            
+            <h4>Clubs Section</h4>
+            <ul>
+                <li><strong>All Clubs</strong> - Master toggle to enable/disable all club filters at once</li>
+                <li><strong>Individual Clubs</strong> - Select specific clubs you want to monitor</li>
+            </ul>
+
+            <h4>Bands Section</h4>
+            <ul>
+                <li><strong>All Bands</strong> - Master toggle for all amateur bands</li>
+                <li><strong>Individual Bands</strong> - From 160m through 6m</li>
+            </ul>
+
+            <h4>Speed Ranges</h4>
+            <p>Filter by CW sending speed from <code>&lt; 10 WPM</code> to <code>&gt; 39 WPM</code></p>
+
+            <h4>Skimmers From</h4>
+            <p>Choose geographic regions: EU, NA, AS, SA, AF, OC</p>
+
+            <h4>Settings</h4>
+            <ul>
+                <li><strong>Refresh Rate</strong> - How often to fetch new data (30-180 seconds)</li>
+                <li><strong>Sort By</strong> - Order spots by Frequency, Call, Age, Club, Speed, or Spotter</li>
+                <li><strong>Max Age</strong> - Only show spots within this time limit (5-60 minutes)</li>
+                <li><strong>Call Filter</strong> - Use wildcards to filter callsigns (e.g., "W1*" for W1 calls)</li>
+                <li><strong>Own Call</strong> - Your callsign for personalized highlighting</li>
+                <li><strong>Show Self Spots</strong> - Include or exclude spots of your own callsign</li>
+            </ul>
+
+            <div class="warning">
+                <strong>Note:</strong> Changes to filters automatically refresh the Club Spots data. More restrictive filters may result in fewer spots being displayed.
+            </div>
+        </div>
+
+        <div class="tab-section">
+            <h3>📊 Frequencies</h3>
+            <p>Reference guide showing CW club frequencies organized by band:</p>
+            <ul>
+                <li>Frequencies are grouped by amateur band (160m-6m)</li>
+                <li>Each entry shows the frequency and associated club</li>
+                <li>Color-coded clubs for easy identification</li>
+                <li>Perfect for finding where clubs typically operate</li>
+            </ul>
+        </div>
+
+        <div class="tab-section">
+            <h3>📅 Calendar</h3>
+            <p>Stay informed about upcoming CW contests and events:</p>
+            <ul>
+                <li><strong>UTC Clock</strong> - Real-time UTC display for contest coordination</li>
+                <li><strong>Contest Listings</strong> - Upcoming CW contests and special events</li>
+                <li><strong>Event Details</strong> - Dates, times, and links to contest information</li>
+                <li><strong>Pull to Refresh</strong> - Update the calendar with latest events</li>
+            </ul>
+        </div>
+
+        <div class="tab-section">
+            <h3>ℹ️ Info</h3>
+            <p>App information, references, and support:</p>
+            <ul>
+                <li><strong>Reference Links</strong> - Quick access to related apps and websites</li>
+                <li><strong>Support Options</strong> - Rate the app, write reviews, and access privacy policy</li>
+                <li><strong>About Section</strong> - Developer information and app version</li>
+            </ul>
+        </div>
+
+        <h2>Tips for Effective Use</h2>
+
+        <div class="tip">
+            <h3>Contest Monitoring</h3>
+            <p>During contests, set a fast refresh rate (30s) and filter by specific contest-active clubs. Sort by "Age" to see the most recent activity first.</p>
+        </div>
+
+        <div class="tip">
+            <h3>Band Monitoring</h3>
+            <p>Focus on specific bands by using the "All Bands" toggle to quickly disable everything, then enable only your bands of interest.</p>
+        </div>
+
+        <div class="tip">
+            <h3>Club Activity</h3>
+            <p>To monitor your club's activity, disable "All Clubs" and select only your specific club. This gives you a focused view of fellow members.</p>
+        </div>
+
+        <div class="tip">
+            <h3>Data Usage</h3>
+            <p>If concerned about mobile data usage, increase the refresh rate to 180 seconds and use more restrictive filters to reduce network requests.</p>
+        </div>
+
+        <h2>Troubleshooting</h2>
+
+        <h3>No Spots Appearing</h3>
+        <ul>
+            <li>Check your internet connection</li>
+            <li>Verify that some filters are enabled (at least one club and one band)</li>
+            <li>Increase the "Max Age" setting to see older spots</li>
+            <li>Pull down on the Club Spots list to manually refresh</li>
+        </ul>
+
+        <h3>App Running Slowly</h3>
+        <ul>
+            <li>Increase the refresh rate to reduce network requests</li>
+            <li>Use more restrictive filters to reduce data processing</li>
+            <li>Restart the app if performance degrades over time</li>
+        </ul>
+
+        <h3>Filters Not Working</h3>
+        <ul>
+            <li>Tap the "Reset" button in Filters to restore default settings</li>
+            <li>Ensure at least one option is selected in each filter category</li>
+            <li>Check that "Max Age" isn't set too restrictively</li>
+        </ul>
+
+        <h2>Understanding RBN Data</h2>
+        <p>The Reverse Beacon Network (RBN) is a network of automated listening stations that detect and report CW signals worldwide. Key points to understand:</p>
+
+        <ul>
+            <li><strong>Coverage Varies</strong> - Some bands and regions have better RBN coverage than others</li>
+            <li><strong>Automatic Detection</strong> - RBN stations use software to decode CW, so very weak or malformed signals may not be spotted</li>
+            <li><strong>No QSO Data</strong> - RBN only reports that a signal was heard, not complete QSO information</li>
+            <li><strong>Speed Accuracy</strong> - WPM measurements are estimates based on the detected CW timing</li>
+            <li><strong>Club Information</strong> - Club affiliations are based on databases and may not always be current</li>
+        </ul>
+
+        <h2>Privacy and Data</h2>
+        <p>CW Club Spotter respects your privacy:</p>
+        <ul>
+            <li>All settings are stored locally on your device</li>
+            <li>No personal data is collected or transmitted</li>
+            <li>The app only connects to RBN servers for spot data</li>
+            <li>No user accounts or registration required</li>
+            <li>Full privacy policy available in the app and at our website</li>
+        </ul>
+
+        <div class="contact-section">
+            <h2>Support and Feedback</h2>
+            <p>Need help or have suggestions? We'd love to hear from you!</p>
+            <p><strong>Email:</strong> <a href="mailto:support@head-copy.com">support@head-copy.com</a></p>
+            <p><strong>Website:</strong> <a href="https://www.head-copy.com">www.head-copy.com</a></p>
+            <p><strong>Developer:</strong> K8APP</p>
+            
+            <p style="margin-top: 30px; color: #666;">
+                Data provided by <a href="https://rbn.telegraphy.de">rbn.telegraphy.de</a><br>
+                Thank you to the global RBN community for making this data freely available!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
